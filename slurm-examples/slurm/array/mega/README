@@ -1,0 +1,7 @@
+This is a pretty simple example of using Slurm Job Arrays to process large
+numbers of small tasks.  This example is inspired by a very similar example
+from the University of Florida's Research Computing center
+https://help.rc.ufl.edu/doc/SLURM_Job_Arrays
+
+To run this example, copy it to your home directory, `cd` into it, and run:
+sbatch submit.slurm

@@ -1,0 +1,47 @@
+Author: Derick Greenspan
+Date: July 7th, 2017
+
+Modified by RPW, October 19, 2017
+
+Mathematica requires the user have a license. Therefore, to use Mathematica, 
+you must be included in the mathematica user group, and activate your
+license in an interactive session. The instructions to do so are below:  
+
+Instructions to use Mathematica: 
+
+	Contact Dr. Paul Wiegand at wiegand@ist.ucf.edu or Dr. Glenn Martin at 
+	martin@ist.ucf.edu to be added to the mathematica user group.
+
+
+	For the initial mathematica setup, ssh using X forwarding to stokes: 
+		On Linux/OSX, this is done by running: 
+                  ssh -Y  -i <username>_id_rsa_1  <username>@stokes.ist.ucf.edu,
+		and on Windows, the easiest solution is to use MobaXterm. 
+
+	Then type the following:
+		1. srun -L mathematica@mathematica.net.ucf.edu --pty bash
+		2. mathematica
+
+	Then, select "other ways to activate", click "connect to a license
+	server" and enter the following: mathematica.net.ucf.edu.
+
+	Close the program, type exit.
+
+	Now you can use the mathematica examples found in:
+		 /groups/arcc/shared/examples/current/mathematica
+
+        IMPORTANT: Make sure you always request the license when using srun or sbatch by either adding
+        the following to your command line:
+ 
+             -L mathematica@mathematica.net.ucf.edu
+
+        Or by adding it to your slurm submit script:
+
+             #SBATCH -L mathematica@mathematica.net.ucf.edu
+
+        You can see whether there are licenses in use as follows:
+
+             scontrol show lic
+` 
+	Note: If you exhaust licenses, you may be locked from using Mathematica
+	for a time. Wait a while, and the error will go away.

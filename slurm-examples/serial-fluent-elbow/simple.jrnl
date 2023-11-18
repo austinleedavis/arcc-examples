@@ -1,0 +1,12 @@
+; Fluent Example Input File
+;----------------
+; Read case file
+/file/read-case elbow1.cas
+;----------------
+; Set the number of time steps and iterations/step
+/solve/iterate 3000
+;----------------
+; Save Case & Data files
+/file/write-data elbow1-out.dat
+/exit yes
+

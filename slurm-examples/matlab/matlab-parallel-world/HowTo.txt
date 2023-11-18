@@ -1,0 +1,49 @@
+###In order to run the matlab file appropriately, you will need to compile it first
+###The best way to do this is to start an interactive session with: 
+
+
+srun --pty bash
+
+###and then loading the matlab module
+
+
+module load matlab/matlab-R2018b
+
+
+###and then compiling it through matlab with the matlab compiler
+
+
+mcc -m <your_input_file> -o <the_output_filename>
+
+
+###The output file will be the executable to run.
+
+
+
+###and then compiling it through matlab with the matlab compiler
+###  e.g.,  mcc -m <your_input_file> -o <the_output_filename>
+###For this example specifically:
+
+  mcc -m test.m  -o test
+
+###The output file will be the executable to run.
+
+
+###So, exit you interactive session
+
+exit
+
+###Then submit your job:
+
+sbatch  helloworld-matlab.slurm 
+
+### The output to the job will be in a directory with the same
+### name as your job ID.
+~                                                                                                                                                                         
+~                                                                                                                                                                         
+~                                                                                                                                                                         
+~                                                                                                                                                                         
+~                                                                                                                                                                         
+~                                                                                                                                                                         
+~                                                                                                                                                                         
+~                                                                   
