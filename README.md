@@ -118,14 +118,19 @@ salloc: Relinquishing job allocation 100
 If you need to cancel the job before it has completed, type:
 
 ```sh
-$ scancel _<job-id-number>  
+$ scancel <job-id-number>  
 ```
-_
+or to cancel all jobs you are currently running, type:
+```sh
+$ scancel -u <username>
+```
+
+---
 
 To learn more about your job, either while it is waiting to run (_pending_) or while it is running, type:
 
 ```sh
-$ scontrol show job _<job-id-number>_
+$ scontrol show job <job-id-number>
 ```
 
 If your job is waiting in the queue and you are confused about why it is not running while other jobs seem to be, you can use that command to learn more.  Also, _squeue_ provides an abbreviated "_REASON_" column to give you some idea whether there is a problem with your job.  Keep in mind that prioritization of jobs is a complicated function of several factors, including recent usage.  Those who use system resources less have higher priority than those who use it more -- this is known as _FairShare_.  Older jobs (those that have been in the queue longer) also have increased priority.  You can see the relative priorities of all waiting jobs with the following command:
@@ -194,7 +199,7 @@ The _RawUsage_ column here reports usage in _seconds_.  _EffectiveUsage_ is a r
 
 To determine what the constraints are for your account, you can use the following command and look for the _cpu=<minutes>_ in the _GrpTRESMins_ column.
 
- ```sh
+```sh
 $ sacctmgr show qos arcc
 
      Name   Priority  GraceTime    Preempt PreemptMode  Flags UsageThres UsageFactor       GrpTRES   GrpTRESMins   
